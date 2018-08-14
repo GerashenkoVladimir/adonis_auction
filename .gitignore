@@ -52,4 +52,3 @@ typings/
 .vuepress/dist
 .serverless
 auction.mwb.bak
-test*
