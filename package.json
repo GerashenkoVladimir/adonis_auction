@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node ace test",
+    "test": "node $NODE_DEBUG_OPTION ace test",
     "startDev": "nodemon --inspect server.js",
     "standardAutofix": "node ./node_modules/standard/bin/cmd.js --fix"
   },
@@ -26,6 +26,7 @@
     "@adonisjs/framework": "^5.0.7",
     "@adonisjs/ignitor": "^2.0.6",
     "@adonisjs/lucid": "^5.0.4",
+    "@adonisjs/vow": "^1.0.16",
     "pg": "^7.4.3"
   },
   "devDependencies": {
@@ -36,6 +37,8 @@
     "App": "./app"
   },
   "standard": {
-    "globals": ["use"]
+    "globals": [
+      "use"
+    ]
   }
 }
