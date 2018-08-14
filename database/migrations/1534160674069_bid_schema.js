@@ -1,16 +1,16 @@
-'use strict';
+'use strict'
 
-const Schema = use('Schema');
+const Schema = use('Schema')
 
 class BidSchema extends Schema {
   up () {
     this.create('bids', (table) => {
-      table.increments();
-      table.float('proposedPrice').notNullable();
-      table.integer('user_id').unsigned().references('id').inTable('users');
-      table.integer('lot_id').unsigned().references('id').inTable('lots');
+      table.increments()
+      table.float('proposedPrice').notNullable()
+      table.integer('user_id').unsigned().references('id').inTable('users')
+      table.integer('lot_id').unsigned().references('id').inTable('lots')
 
-      table.timestamps();
+      table.timestamps()
     })
   }
 
@@ -19,4 +19,4 @@ class BidSchema extends Schema {
   }
 }
 
-module.exports = BidSchema;
+module.exports = BidSchema

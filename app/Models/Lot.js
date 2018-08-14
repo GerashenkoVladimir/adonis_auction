@@ -1,17 +1,15 @@
-'use strict';
+'use strict'
 
-const Model = use('Model');
+const Model = use('Model')
 
 class Lot extends Model {
-  user() {
+  user () {
     return this.belongsTo('App/Models/User')
   }
 
-  bids() {
-    return this.hasMany('App/Models/Bid');
+  bids () {
+    return this.hasMany('App/Models/Bid')
   }
-
-
 }
 
-module.exports = Lot;
+module.exports = Lot

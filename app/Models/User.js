@@ -1,19 +1,19 @@
-'use strict';
+'use strict'
 
-const Model = use('Model');
+const Model = use('Model')
 
 class User extends Model {
-  lots() {
-    return this.hasMany('App/Models/Lot');
+  lots () {
+    return this.hasMany('App/Models/Lot')
   }
 
-  bids() {
+  bids () {
     return this.hasMany('App/Models/Bid')
   }
 
-  orders() {
+  orders () {
     return this.hasMany('App/Models/Order')
   }
 }
 
-module.exports = User;
+module.exports = User
