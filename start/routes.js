@@ -18,3 +18,9 @@ const Route = use('Route')
 Route.get('/', ({ request }) => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.group(() => {
+  Route.post('/', 'Auth/RegistrationController.store').validator('User')
+  Route.post('/sign_in', 'Auth/SessionController.signIn')
+    .validator('SignIn')
+}).prefix('/api/auth')
