@@ -1,4 +1,5 @@
 'use strict'
+const { rule } = require('indicative')
 
 class BaseValidator {
   async fails (errorMessages) {
@@ -7,6 +8,10 @@ class BaseValidator {
 
   get validateAll () {
     return true
+  }
+
+  rule (ruleName, rulePattern) {
+    return rule(ruleName, rulePattern)
   }
 }
 

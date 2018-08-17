@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "node $NODE_DEBUG_OPTION ace test",
-    "startDev": "adonis serve --dev",
+    "startDev": "nodemon --inspect server.js",
     "standardAutofix": "node ./node_modules/standard/bin/cmd.js --fix"
   },
   "keywords": [

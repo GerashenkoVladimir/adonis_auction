@@ -24,3 +24,9 @@ Route.group(() => {
   Route.post('/sign_in', 'Auth/SessionController.signIn')
     .validator('SignIn')
 }).prefix('/api/auth')
+
+Route.group(() => {
+  Route.resource('lots', 'LotsController').validator(new Map([
+    [['lots.store'], ['Lot']]
+  ])).only(['store', 'show', 'update', 'destroy', 'index'])
+}).prefix('/api').middleware('auth')

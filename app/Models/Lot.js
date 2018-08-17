@@ -3,6 +3,14 @@
 const Model = use('Model')
 
 class Lot extends Model {
+  static boot () {
+    super.boot()
+
+    this.addHook('beforeSave', async (lot) => {
+      lot.status = 'pending'
+    })
+  }
+
   user () {
     return this.belongsTo('App/Models/User')
   }
