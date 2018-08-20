@@ -10,7 +10,7 @@ class SessionController {
 
     Object.keys(jwtObj).forEach(key => response.header(key, jwtObj[key]))
 
-    const user = await User.findBy({email: email})
+    const user = await User.findBy({email})
 
     response.send(UserPrivateSerializer.serialize(user.toJSON()))
   }

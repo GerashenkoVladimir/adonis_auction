@@ -11,6 +11,10 @@ class Lot extends Model {
     })
   }
 
+  static get dates () {
+    return super.dates.concat(['endTime', 'startTime'])
+  }
+
   user () {
     return this.belongsTo('App/Models/User')
   }

@@ -1,5 +1,7 @@
 'use strict'
 
+const moment = require('moment')
+
 /*
 |--------------------------------------------------------------------------
 | Factory
@@ -20,5 +22,18 @@ Factory.blueprint('App/Models/User', (faker) => {
     firstName: faker.first(),
     lastName: faker.last(),
     password: '12345678'
+  }
+})
+
+Factory.blueprint('App/Models/Lot', (faker, i, data) => {
+  return {
+    user_id: data.user_id || null,
+    title: data.title || faker.word(),
+    currentPrice: data.currentPrice || faker.integer({ min: 10, max: 20 }),
+    estimatedPrice: data.estimatedPrice || faker.integer({ min: 50, max: 100 }),
+    startTime: data.startTime || moment().add(5, 'days'),
+    endTime: data.endTime || moment().add(20, 'days'),
+    description: data.description || faker.paragraph(),
+    image: data.image || 'some image'
   }
 })

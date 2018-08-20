@@ -8,7 +8,7 @@ const LotPublicSerializer = use('App/ResponseSerializers/Lot/LotPublicSerializer
 class LotsController {
   async store ({request, auth, response}) {
     const user = auth.user
-    const newLot = await Lot.create({...this.newLotParams(request), ...{user_id: user.id}})
+    const newLot = await Lot.create({...LotsController.lotParams(request), user_id: user.id})
 
     response.send(LotPrivateSerializer.serialize(newLot.toJSON()))
   }
@@ -27,8 +27,10 @@ class LotsController {
       user_id: auth.user.id,
       id: params.id
     })
-    lot.merge(this.newLotParams(request))
+
+    lot.merge(LotsController.lotParams(request))
     await lot.save()
+
     response.send(LotPrivateSerializer.serialize(lot.toJSON()))
   }
 
@@ -50,8 +52,8 @@ class LotsController {
    * @access private
    * @param request
    */
-  static newLotParams (request) {
-    return request.only(['title', 'description', 'currentPrice', 'estimatedPrice', 'startTime', 'endTime'])
+  static lotParams (request) {
+    return request.only(['title', 'image', 'description', 'currentPrice', 'estimatedPrice', 'startTime', 'endTime'])
   }
 }
 

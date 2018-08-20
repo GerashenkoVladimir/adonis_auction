@@ -2,7 +2,7 @@
 
 const JSONAPISerializer = require('jsonapi-serializer').Serializer
 
-const LotPublicSerializer = new JSONAPISerializer('lotPrivate', {
+const LotPublicSerializer = new JSONAPISerializer('lotPublic', {
   attributes: ['title', 'image', 'description', 'currentPrice', 'estimatedPrice', 'endTime']
 })
 

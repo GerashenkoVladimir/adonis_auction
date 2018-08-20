@@ -5,8 +5,7 @@ const UserPrivateSerializer = use('App/ResponseSerializers/User/UserPrivateSeria
 class RegistrationController {
   async store ({request, response}) {
     const newUser = await User.create(this.registrationParams(request))
-    // eslint-disable-next-line spaced-comment
-    //TODO: add secure serializer
+
     response.send(UserPrivateSerializer.serialize(newUser.toJSON()))
   }
 
