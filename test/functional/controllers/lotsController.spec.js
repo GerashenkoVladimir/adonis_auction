@@ -13,7 +13,7 @@ trait('Test/ApiClient')
 trait('Auth/Client')
 
 test('GET /lots/:id', async ({ client }) => {
-  let lot = await Factory.model('App/Models/Lot').create()
+  const lot = await Factory.model('App/Models/Lot').create()
   const user = await Factory.model('App/Models/User').create()
 
   const response = await client.get(`/api/lots/${lot.id}`).loginVia(user).end()

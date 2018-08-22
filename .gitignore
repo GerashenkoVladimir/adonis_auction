@@ -52,3 +52,4 @@ typings/
 .vuepress/dist
 .serverless
 auction.mwb.bak
+dump.rdb

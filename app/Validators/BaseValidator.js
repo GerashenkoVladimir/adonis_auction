@@ -2,8 +2,8 @@
 const { rule } = require('indicative')
 
 class BaseValidator {
-  async fails (errorMessages) {
-    return this.ctx.response.status(422).send({errors: errorMessages})
+  async fails (errors) {
+    return this.ctx.response.status(422).send({errors})
   }
 
   get validateAll () {

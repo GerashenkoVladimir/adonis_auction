@@ -3,7 +3,7 @@ const User = use('App/Models/User')
 
 trait('DatabaseTransactions')
 
-test('User.create', async ({assert}) => {
+test('User.create', async ({ assert }) => {
   await User.create({
     firstName: 'john',
     lastName: 'Doe',
